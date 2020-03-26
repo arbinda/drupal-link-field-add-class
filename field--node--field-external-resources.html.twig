@@ -76,10 +76,10 @@
       <div class="field--items">
     {% endif %}
     {% for item in items %}
-      {% set display = item.content|render|render %}
-      {% set type = 'external' %}
-      {% if ('youtube.com' in display)  %}
-        {% set type = 'youtube' %}
+      {% set display = item.content|render|render %} //displays the item form line 93
+      {% set type = 'external' %} //sets type to external
+      {% if ('youtube.com' in display)  %} //if input has youtube.com
+        {% set type = 'youtube' %} //type is set to youtube
       {% endif %}
       {% if ('.docx' in display) or ('.doc' in display) %}
         {% set type = 'document' %}
@@ -90,7 +90,7 @@
       {% if ('.pdf' in display) %}
         {% set type = 'pdf' %}
       {% endif %}
-      <div{{ item.attributes.addClass('field--item').addClass(type) }} type='{{ type }}'>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field--item').addClass(type) }} type='{{ type }}'>{{ item.content }}</div>// adds class of type from line 82
     {% endfor %}
     {% if multiple %}
       </div>
